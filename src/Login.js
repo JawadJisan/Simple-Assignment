@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -26,9 +27,9 @@ const Login = () => {
     return (
         <div>
             <h1 className='text-center'>User Information</h1>
-            <div style={{display:'flex', alignItems:'center', justifyContent: 'center' }} className='g-4 m-5 text-center flex'>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} className='g-4 m-5 text-center flex'>
                 <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={user?.data?.pictureUrl} />
+                    <Card.Img style={{ borderRadius: '50%' }} variant="top" src={user?.data?.pictureUrl} />
                     <Card.Body>
                         <Card.Title>User Name: {user?.data?.name} </Card.Title>
                         <Card.Text style={{ fontSize: '22px' }}>
@@ -37,6 +38,7 @@ const Login = () => {
                     </Card.Body>
                 </Card>
             </div>
+                
             <h1 className='text-center'>List of Opening Jobs</h1>
             <Row xs={1} md={2} lg={3} className='g-4 p-2 m-5 '>
                 {
@@ -63,6 +65,10 @@ const Login = () => {
 
 
             </Row>
+
+            <Button className='' variant="primary" size="xs">
+                    <Link to='/' style={{ color: 'black' }} >Home</Link>
+                </Button>
         </div>
     );
 };
