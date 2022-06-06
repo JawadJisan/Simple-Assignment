@@ -8,7 +8,7 @@ const Login = () => {
     const [data, setData] = useState([]);
     const [user, setUser] = useState([]);
     useEffect(() => {
-        fetch('http://refertest.pythonanywhere.com/job/openings')
+        fetch('https://refertest.pythonanywhere.com/job/openings')
             .then(res => res.json())
             .then(data => {
                 setData(data)
@@ -17,7 +17,7 @@ const Login = () => {
             })
     }, [])
     useEffect(() => {
-        fetch('http://refertest.pythonanywhere.com/user/data')
+        fetch('https://refertest.pythonanywhere.com/user/data')
             .then(res => res.json())
             .then(data => {
                 setUser(data)
