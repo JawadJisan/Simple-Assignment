@@ -5,6 +5,7 @@ import { Button, Card, Col, Row } from 'react-bootstrap';
 
 const Login = () => {
     const [data, setData] = useState([]);
+    const [user, setUser] = useState([]);
     useEffect(() => {
       fetch('http://refertest.pythonanywhere.com/job/openings')
         .then(res => res.json())
@@ -14,10 +15,18 @@ const Login = () => {
           console.log(data.data)
         })
     }, [])
+    useEffect(() => {
+      fetch('http://refertest.pythonanywhere.com/user/data')
+        .then(res => res.json())
+        .then(data => {
+          setUser(data)
+          console.log(data.data)
+        })
+    }, [])
     return (
         <div>
              <h1 className='text-center'>List of Opening Jobs</h1>
-      <Row xs={1} md={2} lg={3} className='g-4 p-5 m-5 '>
+      <Row xs={1} md={2} lg={3} className='g-4 p-2 m-5 '>
         {
           data?.data?.map((item) =>
             <Card style={{ width: '25rem' }}>
