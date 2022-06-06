@@ -26,18 +26,15 @@ function App() {
             <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src="holder.js/100px180" />
             <Card.Body>
-              <Card.Title>{item?.designation} </Card.Title>
-              <Card.Text>
-                {item?.company}
+              <Card.Title>Designation: {item?.designation} </Card.Title>
+              <Card.Text>Company Name: {item?.company}
+              </Card.Text>
+              <Card.Text>Job Location: {item?.location}
+              </Card.Text>
+              <Card.Text>Experience: {item?.min_experience == 0 ? 'Fresher Opening' : item?.min_experience }
               </Card.Text>
               <Card.Text>
-                {item?.id}
-              </Card.Text>
-              <Card.Text>
-                {item?.location}
-              </Card.Text>
-              <Card.Text>
-                {item?.min_experience == 0 ? 'Fresher Opening' : item?.min_experience }
+                Skills: {item?.skills[0]}, {item?.skills[1]}, {item?.skills[2]}, {item?.skills[3]}, {item?.skills[4]}, {item?.skills[5]}, {item?.skills[6]}
               </Card.Text>
               <Button variant="primary">Go somewhere</Button>
             </Card.Body>
